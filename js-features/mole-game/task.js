@@ -33,3 +33,6 @@ function countReset() {
   deadCount = 0;
   lostCount = 0;
 }
+
+const holeGame = document.querySelector('.hole.hole_has-mole');
+
