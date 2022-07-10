@@ -26,7 +26,6 @@ class Game {
      */
     const isThis = this;
     window.addEventListener('keydown', function (e) {
-      console.log(e.key);
       if (e.key === isThis.currentSymbol.textContent) {
         isThis.success();
       } else {

@@ -1,31 +1,38 @@
-// const menuLink = document.querySelectorAll('.links');
-// const menuSub = document.querySelectorAll('.menu_sub');
+// ДО
 
-// menuLink.forEach((link) => {
+// const links = document.querySelectorAll('.links');
+
+
+// links.forEach((link) => {
 //   link.onclick = function () {
-//     const list = link.nextElementSibling;
-//     list.classList.toggle('menu_active');
-//   }
-// });
-
-
-const links = document.querySelectorAll('.links');
-
-
-links.forEach((link) => {
-  link.onclick = function () {
-    const subMenu = link.nextElementSibling;
-    const menuSubAll = document.querySelectorAll('.menu_sub');
+//     const subMenu = link.nextElementSibling;
+//     const menuSubAll = document.querySelectorAll('.menu_sub');
     
-    if (subMenu.classList.contains('menu_active')) {
-      subMenu.classList.remove('menu_active');
+//     if (subMenu.classList.contains('menu_active')) {
+//       subMenu.classList.remove('menu_active');
+//       return false;
+//     }
+//     menuSubAll.forEach((item) => {
+//       item.classList.remove("menu_active");
+//     });
+    
+//     subMenu.classList.add("menu_active");
+//   }
+// })
+
+
+// ПОСЛЕ
+
+const menuSub = document.querySelectorAll('.menu_sub');
+
+menuSub.forEach((item) => {
+  const menuLink = item.previousElementSibling;
+  menuLink.onclick = function () {
+    if (item.classList.contains('menu_active')) {
+      item.classList.remove('menu_active');
       return false;
     }
-    menuSubAll.forEach((item) => {
-      item.classList.remove("menu_active");
-    });
-    
-    subMenu.classList.add("menu_active");
+    menuSub.forEach(itemRem => itemRem.classList.remove('menu_active'));
+    item.classList.add('menu_active');
   }
 })
-
