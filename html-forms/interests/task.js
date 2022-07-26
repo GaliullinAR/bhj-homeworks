@@ -7,6 +7,7 @@ interests.addEventListener('change', function (e) {
   const checkBox = listItem.querySelector('.interest__check');
   
   ulItem.forEach(item => {
+    console.log(item);
     const checkBoxChild = item.querySelectorAll('.interest__check');
     checkBoxChild.forEach(el => {
       if (checkBox.checked) {

@@ -4,12 +4,26 @@ body {
 .cart__products {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 .cart__product {
   position: relative;
 }
+
+.basket__button {
+  position: absolute;
+  right: 50px;
+  top: 90px;
+  background: green;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
 .cart__product-count {
   position: absolute;
   top: 0;
