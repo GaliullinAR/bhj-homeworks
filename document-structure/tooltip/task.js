@@ -13,7 +13,7 @@ hasTooltip.forEach((item, index) => {
 
     tooltip.classList.add('tooltip', 'tooltip_active');
     tooltip.innerText = `${e.target.getAttribute('title')}`;
-    tooltip.style.top = top + height + 'px';
+    tooltip.style.top = bottom + 'px';
     tooltip.style.left = left + "px";
 
     e.target.insertAdjacentElement('afterend', tooltip);
