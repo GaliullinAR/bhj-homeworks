@@ -53,6 +53,7 @@ productAdd.forEach((item) => {
 
     let productClone = product.cloneNode(true);
     productClone.className = 'cart__product';
+    productClone.querySelector("img").className = "cart__product-image";
 
     productClone.firstElementChild.remove();
     productClone.replaceChild(cartProductCount, productClone.lastElementChild);
@@ -75,10 +76,11 @@ removeButton.addEventListener('click', function () {
   cart.style.display = "none";
 
   if (cartProduct.children.length > 0) {
-    let array = Array.from(cartProduct.children);
-    array.forEach((item) => {
-      item.remove();
-    })
+    // let array = Array.from(cartProduct.children);
+    // array.forEach((item) => {
+    //   item.remove();
+    // })
+    cartProduct.innerHTML = '';
   }
 })
 

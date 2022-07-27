@@ -4,8 +4,7 @@ body {
 .cart__products {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
+  align-items: center;
 }
 
 .cart__product {
