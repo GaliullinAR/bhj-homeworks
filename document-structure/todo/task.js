@@ -3,7 +3,8 @@ const taskList = document.querySelector('.tasks__list');
 const button = document.querySelector('.tasks__add');
 const form = document.getElementById('tasks__form');
 
-button.addEventListener('click', function () {
+button.addEventListener('click', function (e) {
+  e.preventDefault();
 
   if (input.value.trim()) {
     let val = input.value;

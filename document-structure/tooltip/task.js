@@ -8,12 +8,21 @@ hasTooltip.forEach((item) => {
 
   item.addEventListener('click', function (e) {
     e.preventDefault();
+    const tooltipActive = document.getElementsByClassName('tooltip_active')[0];
 
-    let { top, right, bottom, left, height } = e.target.getBoundingClientRect();
+    if (tooltipActive !== undefined) {
+      tooltipActive.classList.remove('tooltip_active');
+      if (tooltipActive.textContent === this.title) {
+        return false;
+      }
+    }
 
-    tooltip.classList.toggle('tooltip_active');
-    tooltip.innerText = `${e.target.getAttribute('title')}`;
-    tooltip.style.top = bottom + 'px';
+    let { bottom, left } = e.target.getBoundingClientRect();
+
+    tooltip.style.top = bottom + "px";
     tooltip.style.left = left + "px";
+    
+    tooltip.innerText = `${e.target.getAttribute('title')}`;
+    tooltip.classList.toggle("tooltip_active");
   });
 });
