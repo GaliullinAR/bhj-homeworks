@@ -8,10 +8,9 @@ const logout = document.querySelector('.logout');
 
 const storage = JSON.parse(localStorage.getItem('response'));
 
-
-if (storage) {
-  welcome.classList.add('welcome_active');
-  singIn.classList.remove('signin_active');
+if (storage.success) {
+  welcome.classList.add("welcome_active");
+  singIn.classList.remove("signin_active");
 }
 
 button.addEventListener('click', function (e) {
@@ -25,6 +24,8 @@ button.addEventListener('click', function (e) {
         welcome.classList.add("welcome_active");
         singIn.classList.remove("signin_active");
 
+        userID.innerText = response.user_id;
+        
         localStorage.setItem('response', JSON.stringify(response));
       }
     }
