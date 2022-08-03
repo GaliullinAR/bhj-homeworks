@@ -37,6 +37,10 @@
   box-shadow: none;
 }
 
+.card {
+  position: relative;
+}
+
 .welcome {
   display: none;
 }
@@ -44,4 +48,31 @@
 .welcome_active {
   display: block;
   text-align: center;
+}
+
+.logout {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  display: none;
+}
+
+.logout:hover {
+  background: none;
+}
+
+.fa-arrow-right-from-bracket {
+  color: #000;
+  font-size: 20px;
+  transform: scale(1);
+  transition: .2s linear;
+}
+
+.logout:hover .fa-arrow-right-from-bracket {
+  transform: scale(1.2);
+}
+
+.logout_active {
+  display: block;
 }
