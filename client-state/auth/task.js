@@ -30,10 +30,8 @@ button.addEventListener('click', function (e) {
         
         localStorage.setItem('response', JSON.stringify(response));
       } else {
-        welcome.classList.add("welcome_active");
-        singIn.classList.remove("signin_active");
-
-        welcome.innerText = `Неверный логин/пароль`;
+        document.getElementById("signin__form").reset();
+        alert('Неверный логин/пароль');
       }
     }
   })
