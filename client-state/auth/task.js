@@ -29,6 +29,11 @@ button.addEventListener('click', function (e) {
         userID.innerText = response.user_id;
         
         localStorage.setItem('response', JSON.stringify(response));
+      } else {
+        welcome.classList.add("welcome_active");
+        singIn.classList.remove("signin_active");
+
+        welcome.innerText = `Неверный логин/пароль`;
       }
     }
   })
