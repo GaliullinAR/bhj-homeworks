@@ -8,9 +8,10 @@ const logout = document.querySelector('.logout');
 
 const storage = JSON.parse(localStorage.getItem('response'));
 
-if (storage.success) {
+if (storage !== null) {
   welcome.classList.add("welcome_active");
   singIn.classList.remove("signin_active");
+  userID.innerText = storage.user_id;
 }
 
 button.addEventListener('click', function (e) {
@@ -20,6 +21,7 @@ button.addEventListener('click', function (e) {
   xhr.addEventListener('readystatechange', function (e) {
     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
+
       if (response.success) {
         welcome.classList.add("welcome_active");
         singIn.classList.remove("signin_active");
