@@ -7,21 +7,15 @@ if (!modal.classList.contains('modal_active') && !extrance) {
 }
 
 function setCookie(name, value) {
-  document.cookie = name + '=' + value;
+  document.cookie = name + '=' + encodeURIComponent(value);
 }
 
 function getCookie(name) {
-  try {
-
+ 
     const pairs = document.cookie.split("; ");
     const cookie = pairs.find((item) => item.startsWith(name + "="));
-    return cookie.substring(name.length + 1);
+    return cookie ? cookie.substring(name.length + 1) : false;
 
-  } catch (error) {
-
-    return false;
-
-  }  
 }
 
 modalClose.addEventListener('click', function (e) {
